@@ -12,5 +12,4 @@ Commit No.3 - Deleting an Item from RecyclerView bySwiping
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/4859d4e9-78b2-4393-8ffa-cc59fdc731cd" />
 
 ASSIGNMENT
-<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/32636796-81cc-48ad-8916-f1725d9dea92" />
-
+<img width="1913" height="1078" alt="image" src="https://github.com/user-attachments/assets/42207c58-8da8-4be0-a326-f91bafae0c6f" />
