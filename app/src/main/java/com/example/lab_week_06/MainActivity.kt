@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lab_week_06.model.CatBreed
 import com.example.lab_week_06.model.CatModel
 import com.example.lab_week_06.model.Gender
-
+import androidx.recyclerview.widget.ItemTouchHelper
+import com.google.android.material.snackbar.Snackbar
 class MainActivity : AppCompatActivity() {
 
     private val recyclerView: RecyclerView by lazy { findViewById(R.id.recycler_view) }
@@ -38,6 +39,31 @@ class MainActivity : AppCompatActivity() {
                 CatModel(Gender.Unknown, CatBreed.AmericanCurl,     "Curious George", "Award winning investigator", "https://cdn2.thecatapi.com/images/bar.jpg")
             )
         )
+
+        // === Swipe-to-delete ===
+        val swipeHandler = object : ItemTouchHelper.SimpleCallback(0,
+            ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT) {
+
+            override fun onMove(
+                rv: RecyclerView,
+                vh: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean = false
+
+            override fun onSwiped(vh: RecyclerView.ViewHolder, dir: Int) {
+                val position = vh.bindingAdapterPosition
+                val removed = catAdapter.removeAt(position)
+
+                Snackbar.make(recyclerView, "Deleted ${removed.name}", Snackbar.LENGTH_LONG)
+                    .setAction("UNDO") {
+                        catAdapter.insertAt(position, removed)
+                        recyclerView.scrollToPosition(position)
+                    }
+                    .show()
+            }
+        }
+        ItemTouchHelper(swipeHandler).attachToRecyclerView(recyclerView)
+        // =======================
     }
 
     private fun showSelectionDialog(cat: CatModel) {
@@ -47,4 +73,6 @@ class MainActivity : AppCompatActivity() {
             .setPositiveButton("OK", null)
             .show()
     }
+
+
 }
