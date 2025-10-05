@@ -34,11 +34,19 @@ class MainActivity : AppCompatActivity() {
 
         catAdapter.setData(
             listOf(
-                CatModel(Gender.Male,    CatBreed.BalineseJavanese, "Fred",  "Silent and deadly",          "https://cdn2.thecatapi.com/images/7dj.jpg"),
-                CatModel(Gender.Female,  CatBreed.ExoticShorthair,  "Wilma", "Cuddly assassin",            "https://cdn2.thecatapi.com/images/egv.jpg"),
-                CatModel(Gender.Unknown, CatBreed.AmericanCurl,     "Curious George", "Award winning investigator", "https://cdn2.thecatapi.com/images/bar.jpg")
+                CatModel(Gender.Male,    CatBreed.BalineseJavanese, "Fred",          "Silent and deadly",                "https://cdn2.thecatapi.com/images/7dj.jpg"),
+                CatModel(Gender.Female,  CatBreed.ExoticShorthair,  "Wilma",         "Cuddly assassin",                  "https://cdn2.thecatapi.com/images/egv.jpg"),
+                CatModel(Gender.Unknown, CatBreed.AmericanCurl,     "Curious George","Award winning investigator",       "https://cdn2.thecatapi.com/images/bar.jpg"),
+                CatModel(Gender.Female,  CatBreed.AmericanCurl,     "Luna",          "Window-sill philosopher",          "https://cdn2.thecatapi.com/images/egv.jpg"),
+                CatModel(Gender.Male,    CatBreed.ExoticShorthair,  "Milo",          "Snack reviewer, 5⭐ only",          "https://cdn2.thecatapi.com/images/7dj.jpg"),
+                CatModel(Gender.Unknown, CatBreed.BalineseJavanese, "Nova",          "Sleeps like a pro",                "https://cdn2.thecatapi.com/images/bar.jpg"),
+                CatModel(Gender.Male,    CatBreed.BalineseJavanese, "Ollie",         "Laser-pointer sprinter",           "https://cdn2.thecatapi.com/images/7dj.jpg"),
+                CatModel(Gender.Female,  CatBreed.ExoticShorthair,  "Poppy",         "Box collector and curator",        "https://cdn2.thecatapi.com/images/egv.jpg"),
+                CatModel(Gender.Unknown, CatBreed.AmericanCurl,     "Quinn",         "Blanket burrow specialist",        "https://cdn2.thecatapi.com/images/bar.jpg"),
+                CatModel(Gender.Male,    CatBreed.ExoticShorthair,  "Rex",           "Sunbeam chaser and doorman",       "https://cdn2.thecatapi.com/images/7dj.jpg")
             )
         )
+
 
         // === Swipe-to-delete ===
         val swipeHandler = object : ItemTouchHelper.SimpleCallback(0,
